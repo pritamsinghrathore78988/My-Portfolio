@@ -1,4 +1,51 @@
 // script.js (cleaned & consolidated)
+// Scroll to top when page loads or refreshes
+window.onload = window.onbeforeunload = function() {
+  window.scrollTo(0, 0);
+};
+
+// Certificate Modal Functionality
+const modal = document.getElementById('certificate-modal');
+const modalImg = document.getElementById('certificate-image');
+const captionText = document.getElementById('caption');
+const closeBtn = document.querySelector('.close-modal');
+
+// Open modal when clicking on view certificate link
+document.querySelectorAll('.view-certificate').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const imgSrc = this.getAttribute('href');
+        if (imgSrc) {
+            modalImg.src = imgSrc;
+            modalImg.alt = this.previousElementSibling?.textContent || 'Certificate';
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+    });
+});
+
+// Close modal when clicking the close button
+closeBtn.addEventListener('click', function() {
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+});
+
+// Close modal when clicking outside the image
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   /* ============================
      Cache DOM elements
