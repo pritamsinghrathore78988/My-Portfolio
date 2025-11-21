@@ -41,10 +41,11 @@
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#assignments" class="nav-link">Assignments</a>
                 <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
                 <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#connect" class="nav-link">Connect with me</a>
             </div>
             <div class="nav-actions">
                 <!-- <button class="search-btn" id="search-btn" aria-label="Search">
@@ -61,38 +62,62 @@
 
     <!-- Home Section -->
     <section id="home" class="section">
+        <!-- Animated Background Elements -->
+        <div class="home-bg-shapes">
+            <div class="bg-shape bg-shape-1"></div>
+            <div class="bg-shape bg-shape-2"></div>
+            <div class="bg-shape bg-shape-3"></div>
+        </div>
+        
         <div class="container">
-            <div class="home-content">
-                <div class="profile-container">
+            <div class="home-card">
+                <div class="home-content">
                     <div class="profile-image-container">
-                        <img src="profile.jpg" alt="Pritam Singh Rathore" class="profile-image" loading="eager" width="250" height="250">
+                        <div class="profile-image-wrapper">
+                            <img src="profile.jpg" alt="Pritam Singh Rathore" class="profile-image" loading="eager">
+                        </div>
                     </div>
-                    <div class="social-icons">
-                        <a href="https://github.com/pritamsinghrathore78988" target="_blank" class="social-icon" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://youtube.com/@study_channel__111?si=AjURL6LHXmRJfDaC" target="_blank" class="social-icon" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="pritamsinghrathore78988@gmail.com" class="social-icon" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/pritam-singh-rathore-959781318/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/pritam_rathore_25?igsh=aWhqaG9yZHQ0YW0z" target="_blank" class="social-icon" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-text">
-                    <h4 class="greeting">Hi, I'm</h4>
-                    <h1 class="name">Pritam Singh Rathore</h1>
-                    <h2 class="role">Web Developer</h2>
-                    <p class="tagline">Turning ideas into interactive web experiences</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="#projects" class="btn btn-secondary">View My Work</a>
+                    
+                    <div class="home-text">
+                        <h1 class="greeting">Hi, I'm <span class="highlight">Pritam Singh Rathore</span></h1>
+                        <h2 class="role">Web Developer</h2>
+                        <p class="tagline">Turning ideas into interactive web experiences</p>
+                        
+                        <div class="cta-section">
+                            <div class="cta-buttons">
+                                <a href="#projects" class="btn btn-primary">
+                                    <span>View My Work</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="#contact" class="btn btn-secondary">
+                                    <span>Contact Me</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </a>
+                            </div>
+                            <div class="social-links">
+                                <span>Connect with me:</span>
+                                <div class="social-icons">
+                                    <a href="https://github.com/pritamsinghrathore78988" target="_blank" class="social-icon" aria-label="GitHub" data-tooltip="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pritam-singh-rathore-959781318/" target="_blank" class="social-icon" aria-label="LinkedIn" data-tooltip="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="mailto:pritamsinghrathore78988@gmail.com" class="social-icon" aria-label="Email" data-tooltip="Email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/pritam_rathore_25?igsh=aWhqaG9yZHQ0YW0z" target="_blank" class="social-icon" aria-label="Instagram" data-tooltip="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://leetcode.com/u/Pritam_03102005/" target="_blank" class="social-icon" aria-label="LeetCode" data-tooltip="LeetCode">
+                                        <i class="fas fa-code"></i>
+                                    </a>
+                                    <a href="https://youtube.com/@study_channel__111?si=AjURL6LHXmRJfDaC" target="_blank" class="social-icon" aria-label="YouTube" data-tooltip="YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,7 +159,7 @@
                     </div>
                     <div class="skill-card">
                         <i class="fab fa-DSA-alt"></i>
-                        <h3>CSS3</h3>
+                        <h3>Java(core)</h3>
                     </div>
                     <div class="skill-card">
                         <i class="fab fa-js"></i>
@@ -194,6 +219,36 @@
                         <h3>MySQL</h3>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span>Assignments</span></h2>
+            <p class="section-subtitle">Explore my academic assignments by subject</p>
+            
+            <div class="assignment-container">
+                <!-- Data Science Assignment -->
+                <a href="https://youtube.com/playlist?list=PLchA9HoVDnIhOk2rNpiSdZvYw-IW6kzpG&si=9FoZ47-scr90iHLm" class="assignment-card" data-subject="data-science">
+                    <div class="assignment-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Introduction to Data Science</h3>
+                    <p>Click to view all Data Science assignments </p>
+                    <span class="assignment-cta">View Assignments <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Computer Graphics Assignment -->
+                <a href="https://youtu.be/KpeZu-KMmwk?si=8SZWWV2YbmONHOqu" class="assignment-card" data-subject="graphics">
+                    <div class="assignment-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Computer Graphics and Multimedia</h3>
+                    <p>Click to view all Computer Graphics assignments </p>
+                    <span class="assignment-cta">View Assignments <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </section>
@@ -276,32 +331,28 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
         <div class="container">
-            <h2 class="section-title">Work <span>Experience</span></h2>
+            <h2 class="section-title">My Certificates & <span>Achievements</span></h2>
             <div class="education-container">
                 <div class="education-card">
                     <div class="education-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-certificate"></i>
                     </div>
                     <div class="education-details">
-                        <h3>Frontend Design Intern</h3>
-                        <h4>Indore Municipal Corperation (IMC) Indore</h4>
-                        
-                        <p class="date">June 2024 - August 2024</p>
-                       <ul>
-    <li>Collaborated with a cross-functional team to design and implement responsive, user-friendly web interfaces</li>
-    <li>Contributed to developing, optimizing, and maintaining front-end code across multiple projects</li>
-    <li>Actively participated in code reviews, sprint discussions, and team collaboration meetings</li>
-    <li>Gained practical experience with modern web development tools, frameworks, and best practices</li>
-</ul>
-
+                        <h3>IMC Internship Certificate</h3>
+                        <h4>Indore Municipal Corporation under Internship with Mayor Program (IWM)</h4>
+                        <p class="date">June 2024-August 2024</p>
+                        <p>Successfully completed a 2-month Internship at IMC under Internship with Mayor (IWM) Program, Indore. Worked on responsive UI components and contributed to improving user experience on internal web modules.</p>
+                        <a href="imc certificate.jpg" class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+   
 
     <!-- Education Section -->
     <section id="education" class="section">
@@ -313,9 +364,9 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="education-details">
-                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <h3>BCA + MCA INTEGRATED COURSE</h3>
                         <h4>International Institute of Professional Studies, DAVV,Indore</h4>
-                        <p class="date">2023-2028 - Year</p>
+                        <p class="date">2023-2028</p>
                         <p>Relevant coursework: Web Development, Data Structures, Database Management, Software Engineering</p>
                     </div>
                 </div>
@@ -323,80 +374,122 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
+    <!-- Connect With Me Section -->
+    <section id="connect" class="section">
         <div class="container">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="details">
-                            <h3>Email</h3>
-                            <p>pritamsinghrathore78988@gmail.com</p>
-                        </div>
+            <h2 class="section-title">Connect <span>With Me</span></h2>
+            <p class="section-subtitle">Let's get in touch! Feel free to reach out through any of these platforms</p>
+            
+            <div class="connect-container">
+                <!-- GitHub Card -->
+                <a href="https://github.com/pritamsinghrathore78988" target="_blank" class="connect-card" data-platform="github">
+                    <div class="connect-icon">
+                        <i class="fab fa-github"></i>
                     </div>
-                    <div class="contact-item">
-                        <div class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                        <div class="details">
-                            <h3>YouTube</h3>
-                            <a href="https://youtube.com/@study_channel__111?si=AjURL6LHXmRJfDaC" target="_blank">My Channel</a>
-                        </div>
+                    <h3>GitHub</h3>
+                    <p>Check out my projects and contributions</p>
+                    <span class="connect-username">@pritamsinghrathore78988</span>
+                </a>
+
+                <!-- LinkedIn Card -->
+                <a href="https://www.linkedin.com/in/pritam-singh-rathore-959781318/" target="_blank" class="connect-card" data-platform="linkedin">
+                    <div class="connect-icon">
+                        <i class="fab fa-linkedin-in"></i>
                     </div>
-                    <div class="contact-item">
-                        <div class="icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/pritam-singh-rathore-959781318/" target="_blank">Pritam Singh Rathore</a>
-                        </div>
+                    <h3>LinkedIn</h3>
+                    <p>Let's connect professionally</p>
+                    <span class="connect-username">Pritam Singh Rathore</span>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto:pritamsinghrathore78988@gmail.com" class="connect-card" data-platform="email">
+                    <div class="connect-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <h3>Email</h3>
+                    <p>Send me a message directly</p>
+                    <span class="connect-username">pritamsinghrathore78988@gmail.com</span>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="https://www.instagram.com/pritam_rathore_25?igsh=aWhqaG9yZHQ0YW0z" target="_blank" class="connect-card" data-platform="instagram">
+                    <div class="connect-icon">
+                        <i class="fab fa-instagram"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <h3>Instagram</h3>
+                    <p>Follow me for updates</p>
+                    <span class="connect-username">@pritam_rathore_25</span>
+                </a>
+
+                <!-- LeetCode Card -->
+                <a href="https://leetcode.com/u/Pritam_03102005/" target="_blank" class="connect-card" data-platform="leetcode">
+                    <div class="connect-icon">
+                        <i class="fas fa-code"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <h3>LeetCode</h3>
+                    <p>Check out my coding solutions</p>
+                    <span class="connect-username">@Pritam_03102005</span>
+                </a>
+
+                <!-- YouTube Card -->
+                <a href="https://youtube.com/@study_channel__111?si=AjURL6LHXmRJfDaC" target="_blank" class="connect-card" data-platform="youtube">
+                    <div class="connect-icon">
+                        <i class="fab fa-youtube"></i>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                    <h3>YouTube</h3>
+                    <p>Watch my tutorials and content</p>
+                    <span class="connect-username">@study_channel__111</span>
+                </a>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="social-links">
-                    <a href="https://github.com/pritamsinghrathore78988" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/pritam-singh-rathore-959781318/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://youtube.com/@study_channel__111?si=AjURL6LHXmRJfDaC" target="_blank"><i class="fab fa-youtube"></i></a>
-                   
+                    <a href="https://github.com/pritamsinghrathore78988" target="_blank" class="social-icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pritam-singh-rathore-959781318/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pritamsinghrathore78988@gmail.com" target="_blank" class="social-icon" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pritam_rathore_25?igsh=aWhqaG9yZHQ0YW0z" target="_blank" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/Pritam_03102005/" target="_blank" class="social-icon" aria-label="LeetCode">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <a href="https://youtube.com/@study_channel__111?si=AjURL6LHXmRJfDaC" target="_blank" class="social-icon" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
-                <p class="copyright">&copy; <span id="year"></span> Pritam Singh Rathore. All Rights Reserved.</p>
+                <div class="footer-bottom">
+                    <p class="copyright">&copy; <span id="year"></span> Pritam Singh Rathore. All Rights Reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top" id="back-to-top">
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
-    </a>
+    </button>
 
-    <!-- Load script with defer to prevent blocking -->
-    <script src="script.js" defer></script>
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="certificate-modal">
+        <span class="close-modal">&times;</span>
+        <img class="certificate-modal-content" id="certificate-image" src="" alt="Certificate">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
