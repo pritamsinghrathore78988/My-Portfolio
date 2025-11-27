@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Discussion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a45b1;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --text-light: #a0a0a0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            color: var(--secondary);
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Video Card */
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        .view-button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .view-button i {
+            margin-left: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                margin-top: 1.5rem;
+            }
+
+            .back-button {
+                position: relative;
+                display: inline-block;
+                margin-bottom: 1rem;
+                left: 0;
+                transform: none;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 2rem auto 0;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="assignments.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Assignments
+            </a>
+            <h1>Online Quiz Discussion</h1>
+            <p>Click on any video to view the detailed solution for the assignment</p>
+        </header>
+
+        <div class="video-grid" id="videoGrid">
+            <!-- Videos will be loaded here by JavaScript -->
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample YouTube video data
+        const videos = [
+            {
+                id: 'QuIiLbdG6QnA1cKk', // YouTube video ID
+                title: 'Test 1 - Problem 1: Data Structures Overview'
+            },
+            {
+                id: '9bZkp7q19f0', // YouTube video ID
+                title: 'Test 1 - Problem 2: Algorithm Analysis'
+            },
+            {
+                id: 'JGwWNGJdvx8', // YouTube video ID
+                title: 'Test 1 - Problem 3: Recursion Techniques'
+            },
+            {
+                id: 'JGwWNGJdvx8', // YouTube video ID
+                title: 'Test 1 - Problem 4: Dynamic Programming'
+            }
+        ];
+
+        // Function to generate video cards
+        function generateVideoCards() {
+            const videoGrid = document.getElementById('videoGrid');
+            videoGrid.innerHTML = ''; // Clear loading spinner
+
+            videos.forEach(video => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                
+                videoCard.innerHTML = `
+                    <div class="thumbnail">
+                        <img 
+                            src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg" 
+                            alt="${video.title}"
+                            onerror="this.src='https://img.youtube.com/vi/${video.id}/hqdefault.jpg'"
+                        >
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">${video.title}</h3>
+                        <a 
+                            href="https://www.youtube.com/watch?v=${video.id}" 
+                            target="_blank" 
+                            class="view-button"
+                        >
+                            Watch Now <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                `;
+                
+                videoGrid.appendChild(videoCard);
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Small delay to show loading state (for demo purposes)
+            setTimeout(generateVideoCards, 800);
+        });
+    </script>
+</body>
+</html>
