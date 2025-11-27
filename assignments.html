@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Data Science Assignments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a45b1;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text: #e0e0e0;
+            --text-light: #a0a0a0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --card-hover: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: rgba(108, 99, 255, 0.1);
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+            background: rgba(108, 99, 255, 0.2);
+            color: var(--primary);
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2rem 0 3rem;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .assignments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .assignment-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .assignment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
+            background: var(--card-hover);
+            border-color: rgba(108, 99, 255, 0.2);
+        }
+
+        .assignment-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: rgba(108, 99, 255, 0.1);
+            width: 70px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+
+        .assignment-card h2 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .assignment-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .assignments-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 2rem auto 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-top: 1.5rem;
+            }
+            
+            .back-button {
+                margin-bottom: 1.5rem;
+            }
+            
+            .assignment-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .assignment-card {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .assignment-card:nth-child(1) { animation-delay: 0.1s; }
+        .assignment-card:nth-child(2) { animation-delay: 0.2s; }
+        .assignment-card:nth-child(3) { animation-delay: 0.3s; }
+        .assignment-card:nth-child(4) { animation-delay: 0.4s; }
+        .assignment-card:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        
+        <h1>My Assignments</h1>
+        
+        <div class="assignments-grid">
+            <a href="dsassignment1.html" class="assignment-card">
+                <i class="fas fa-file-alt"></i>
+                <h2>Internal Test 1</h2>
+                <p>Click to see assignment (video solution of Internal Test 1)</p>
+            </a>
+            
+            <a href="dsassignment2.html" class="assignment-card">
+                <i class="fas fa-file-alt"></i>
+                <h2>Internal Test 2</h2>
+                <p>Click to see assignment (video solution of test 2)</p>
+            </a>
+            
+            <a href="assignments.html" class="assignment-card">
+                <i class="fas fa-file-alt"></i>
+                <h2>Data Science Assignment</h2>
+                <p>Click to see assignment (video solution of test 3)</p>
+            </a>
+            
+            <a href="assignments.html" class="assignment-card">
+                <i class="fas fa-file-alt"></i>
+                <h2>Online Quiz</h2>
+                <p>Click to see assignment (video solution of test 4)</p>
+            </a>
+            
+            <a href="assignments.html" class="assignment-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>End Semester Exam Paper Discussion</h2>
+                <p>Click to see assignment (video solution of end sem)</p>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add current year to footer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scroll to top
+            const scrollToTop = document.createElement('button');
+            scrollToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+            scrollToTop.className = 'scroll-to-top';
+            document.body.appendChild(scrollToTop);
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTop.style.display = 'block';
+                } else {
+                    scrollToTop.style.display = 'none';
+                }
+            });
+
+            scrollToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
