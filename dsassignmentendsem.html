@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>End Sem Discussion</title>
+    <title>Internal Test 1 Discussion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Base Styles */
@@ -30,16 +30,114 @@
             color: var(--text);
             line-height: 1.6;
             padding: 2rem 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .container {
             width: 90%;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            color: var(--secondary);
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Video Card */
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .video-card:hover .thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             color: var(--text);
             line-height: 1.4;
             flex: 1;
@@ -112,158 +210,44 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
-        .coming-soon {
-            background: linear-gradient(145deg, #1e1e1e, #252525);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 8px 8px 16px #0d0d0d, -8px -8px 16px #2f2f2f;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-        }
-
-        .coming-soon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            margin: -2px;
-            border-radius: inherit;
-            background: linear-gradient(45deg, var(--primary), var(--secondary), #ff6b6b);
-            animation: borderAnimation 8s linear infinite;
-            background-size: 300% 300%;
-        }
-
-        @keyframes borderAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon i {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), #ff6b6b, var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% auto;
-            animation: gradient 5s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .coming-soon h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .coming-soon p {
-            margin-bottom: 1rem;
-        }
-
-        .prep-button {
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 500;
-            text-align: center;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .prep-button:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-        }
-
-        .prep-button i {
-            margin-right: 6px;
-            font-size: 0.9em;
-        }
-
-        .top-button-container {
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .assignments-button {
-            display: inline-flex;
-            align-items: center;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: var(--transition);
-            font-size: 0.9rem;
-        }
-
-        .assignments-button:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
-        }
-
-        .assignments-button i {
-            margin-right: 8px;
-            font-size: 0.9em;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="top-button-container">
-            <a href="assignments.html" class="assignments-button">
+        <header class="header">
+            <a href="assignments.html" class="back-button">
                 <i class="fas fa-arrow-left"></i> Back to Assignments
             </a>
+            <h1>End Semester Examination Discussion</h1>
+            <p>Click on any video to view the detailed solution</p>
+        </header>
+
+        <div class="video-grid" id="videoGrid">
+            <!-- Videos will be loaded here by JavaScript -->
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
         </div>
-        <section class="coming-soon">
-            <i class="fas fa-book"></i>
-            <h2>Coming Soon</h2>
-            <p>End semester exam paper discussion and detailed solutions will be uploaded soon.</p>
-            <p>Comprehensive explanations covering all exam topics and practice problems.</p>
-            <button class="prep-button">
-                <i class="far fa-clock"></i>
-                In Preparation
-            </button>
-        </section>
     </div>
 
     <script>
-        // Sample YouTube video data
+        // YouTube video data
         const videos = [
             {
-                id: 'Quhbj66uyfk', // YouTube video ID
-                title: 'Test 1 - Problem 1: Data Structures Overview'
+                id: 'VJtTbOL0m34', // YouTube video ID for Part 1
+                title: 'Part 1:End Sem Question 1 and 2'
             },
             {
-                id: '9bZkp7q19f0', // YouTube video ID
-                title: 'Test 1 - Problem 2: Algorithm Analysis'
+                id: '8owhX8fIcpY', // YouTube video ID for Part 2
+                title: 'PART 2: End Sem Question 3 and 4'
             },
             {
-                id: 'JGwWNGJdvx8', // YouTube video ID
-                title: 'Test 1 - Problem 3: Recursion Techniques'
+                id: '1tkEbv0MAcg', // YouTube video ID for Part 3
+                title: 'PART 3: End Sem Question 5 and 6'
             },
             {
-                id: 'JGwWNGJdvx8', // YouTube video ID
-                title: 'Test 1 - Problem 4: Dynamic Programming'
+                id: 'ENt_syTOZ_E', // YouTube video ID for Part 4
+                title: 'PART 4: End Sem Question 7 and 8'
             }
         ];
 
@@ -279,9 +263,9 @@
                 videoCard.innerHTML = `
                     <div class="thumbnail">
                         <img 
-                            src="https://img.youtube.com/vi/${video.id}/maxresdefault.jpg" 
+                            src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" 
                             alt="${video.title}"
-                            onerror="this.src='https://img.youtube.com/vi/${video.id}/hqdefault.jpg'"
+                            onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${video.id}/hqdefault.jpg'"
                         >
                     </div>
                     <div class="video-info">
